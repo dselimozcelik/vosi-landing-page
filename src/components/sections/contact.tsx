@@ -19,9 +19,10 @@ export default function Contact() {
     setStatus("success");
   }
 
+  const headingLines = t("heading").split("\n");
+
   return (
     <section id="contact" className="py-24 sm:py-32 relative overflow-hidden">
-      {/* Subtle background glow */}
       <div
         aria-hidden="true"
         className="absolute inset-0 pointer-events-none"
@@ -33,13 +34,13 @@ export default function Contact() {
 
       <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
-          {/* Left — heading + direct contact */}
+          {/* Left */}
           <SectionReveal>
             <p className="text-xs font-medium tracking-widest uppercase text-[var(--plum-400)] mb-3">
-              {t("heading").split("\n")[0]}
+              {t("label")}
             </p>
             <h2 className="text-3xl sm:text-4xl font-bold text-[var(--foreground)] tracking-tight leading-tight mb-4">
-              {t("heading").split("\n").map((line, i) => (
+              {headingLines.map((line, i) => (
                 <span key={i} className="block">{line}</span>
               ))}
             </h2>
@@ -47,7 +48,7 @@ export default function Contact() {
               {t("subheading")}
             </p>
 
-            <div className="flex flex-col gap-3">
+            <div className="flex flex-col gap-2">
               <p className="text-xs text-[var(--foreground-muted)] uppercase tracking-widest">
                 {t("or")}
               </p>
@@ -76,35 +77,40 @@ export default function Contact() {
                 className="flex flex-col gap-4 rounded-xl border border-[var(--border)] bg-[var(--background-elevated)] p-6 sm:p-8"
               >
                 <div className="flex flex-col gap-1.5">
-                  <label className="text-xs font-medium text-[var(--foreground-muted)]">
+                  <label htmlFor="contact-name" className="text-xs font-medium text-[var(--foreground-muted)]">
                     {t("name_label")}
                   </label>
                   <Input
+                    id="contact-name"
                     required
                     name="name"
+                    autoComplete="name"
                     placeholder={t("name_placeholder")}
                     className="bg-[var(--background)] border-[var(--border)] focus-visible:ring-[var(--plum-500)] text-[var(--foreground)] placeholder:text-[var(--foreground-muted)]/50"
                   />
                 </div>
 
                 <div className="flex flex-col gap-1.5">
-                  <label className="text-xs font-medium text-[var(--foreground-muted)]">
+                  <label htmlFor="contact-email" className="text-xs font-medium text-[var(--foreground-muted)]">
                     {t("email_label")}
                   </label>
                   <Input
+                    id="contact-email"
                     required
                     type="email"
                     name="email"
+                    autoComplete="email"
                     placeholder={t("email_placeholder")}
                     className="bg-[var(--background)] border-[var(--border)] focus-visible:ring-[var(--plum-500)] text-[var(--foreground)] placeholder:text-[var(--foreground-muted)]/50"
                   />
                 </div>
 
                 <div className="flex flex-col gap-1.5">
-                  <label className="text-xs font-medium text-[var(--foreground-muted)]">
+                  <label htmlFor="contact-message" className="text-xs font-medium text-[var(--foreground-muted)]">
                     {t("message_label")}
                   </label>
                   <textarea
+                    id="contact-message"
                     required
                     name="message"
                     rows={4}

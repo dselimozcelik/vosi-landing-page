@@ -12,6 +12,7 @@
     "cta_secondary": "Hizmetleri Keşfedin"
   },
   "services": {
+    "label": "Ne yapıyoruz",
     "heading": "Hizmetlerimiz",
     "subheading": "Yapay zeka ve yazılım geliştirme alanında uçtan uca çözümler sunuyoruz.",
     "items": {
@@ -42,6 +43,7 @@
     }
   },
   "contact": {
+    "label": "İletişim",
     "heading": "Projenizi hayata\ngeçirelim.",
     "subheading": "Fikrinizi bize anlatın, birlikte çözüm üretelim.",
     "name_label": "Adınız",

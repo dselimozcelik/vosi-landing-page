@@ -12,7 +12,7 @@ export default function Services() {
         {/* Heading */}
         <SectionReveal className="text-center mb-16">
           <p className="text-xs font-medium tracking-widest uppercase text-[var(--plum-400)] mb-3">
-            What we do
+            {t("label")}
           </p>
           <h2 className="text-3xl sm:text-4xl font-bold text-[var(--foreground)] tracking-tight mb-4">
             {t("heading")}

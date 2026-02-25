@@ -12,6 +12,7 @@
     "cta_secondary": "Explore Services"
   },
   "services": {
+    "label": "What we do",
     "heading": "Our Services",
     "subheading": "End-to-end solutions in AI and software development.",
     "items": {
@@ -42,6 +43,7 @@
     }
   },
   "contact": {
+    "label": "Contact",
     "heading": "Let's bring your project\nto life.",
     "subheading": "Tell us your idea and we'll build a solution together.",
     "name_label": "Your Name",
