@@ -1,0 +1,62 @@
+{
+  "nav": {
+    "services": "Hizmetler",
+    "about": "Hakkımızda",
+    "contact": "İletişim",
+    "cta": "Başlayalım"
+  },
+  "hero": {
+    "headline": "Akıllı yazılım\ngeliştiriyoruz.",
+    "tagline": "Bilgisayarlı görü, yapay zeka ve tam yığın geliştirme ile işletmenizi geleceğe taşıyoruz.",
+    "cta_primary": "Projenizi Başlatın",
+    "cta_secondary": "Hizmetleri Keşfedin"
+  },
+  "services": {
+    "heading": "Hizmetlerimiz",
+    "subheading": "Yapay zeka ve yazılım geliştirme alanında uçtan uca çözümler sunuyoruz.",
+    "items": {
+      "cv": {
+        "title": "Bilgisayarlı Görü",
+        "description": "Nesne tespiti, yüz tanıma ve görsel analiz sistemleri ile iş süreçlerinizi otomatikleştirin."
+      },
+      "image": {
+        "title": "Görüntü İşleme",
+        "description": "Gerçek zamanlı görüntü analizi, sınıflandırma ve segmentasyon çözümleri."
+      },
+      "ai_apps": {
+        "title": "Özel Yapay Zeka Uygulamaları",
+        "description": "İşletmenize özel makine öğrenmesi modelleri ve yapay zeka destekli uygulamalar."
+      },
+      "fullstack": {
+        "title": "Tam Yığın Geliştirme",
+        "description": "Modern web uygulamaları, API'ler ve ölçeklenebilir altyapı çözümleri."
+      },
+      "data": {
+        "title": "Veri Analitiği",
+        "description": "Büyük veri işleme, görselleştirme ve iş zekası platformları."
+      },
+      "consulting": {
+        "title": "Yapay Zeka Danışmanlığı",
+        "description": "Dijital dönüşüm yolculuğunuzda stratejik yapay zeka danışmanlığı ve prototipleme."
+      }
+    }
+  },
+  "contact": {
+    "heading": "Projenizi hayata\ngeçirelim.",
+    "subheading": "Fikrinizi bize anlatın, birlikte çözüm üretelim.",
+    "name_label": "Adınız",
+    "name_placeholder": "Adınız Soyadınız",
+    "email_label": "E-posta",
+    "email_placeholder": "ornek@sirket.com",
+    "message_label": "Mesajınız",
+    "message_placeholder": "Projeniz hakkında kısaca bilgi verin...",
+    "submit": "Mesaj Gönder",
+    "success": "Mesajınız iletildi! En kısa sürede size döneceğiz.",
+    "or": "veya doğrudan yazın",
+    "email_direct": "hello@vosi.ai"
+  },
+  "footer": {
+    "tagline": "Akıllı yazılım, gerçek sonuçlar.",
+    "copyright": "© 2025 Vosi. Tüm hakları saklıdır."
+  }
+}

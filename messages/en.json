@@ -1,0 +1,62 @@
+{
+  "nav": {
+    "services": "Services",
+    "about": "About",
+    "contact": "Contact",
+    "cta": "Get Started"
+  },
+  "hero": {
+    "headline": "We build intelligent\nsoftware.",
+    "tagline": "Computer vision, AI, and full-stack development to bring your business into the future.",
+    "cta_primary": "Start Your Project",
+    "cta_secondary": "Explore Services"
+  },
+  "services": {
+    "heading": "Our Services",
+    "subheading": "End-to-end solutions in AI and software development.",
+    "items": {
+      "cv": {
+        "title": "Computer Vision",
+        "description": "Object detection, facial recognition, and visual analysis systems to automate your workflows."
+      },
+      "image": {
+        "title": "Image Processing",
+        "description": "Real-time image analysis, classification, and segmentation solutions."
+      },
+      "ai_apps": {
+        "title": "Custom AI Applications",
+        "description": "Bespoke machine learning models and AI-powered applications tailored to your business."
+      },
+      "fullstack": {
+        "title": "Full-Stack Development",
+        "description": "Modern web applications, APIs, and scalable infrastructure solutions."
+      },
+      "data": {
+        "title": "Data Analytics",
+        "description": "Big data processing, visualization, and business intelligence platforms."
+      },
+      "consulting": {
+        "title": "AI Consulting",
+        "description": "Strategic AI consulting and prototyping for your digital transformation journey."
+      }
+    }
+  },
+  "contact": {
+    "heading": "Let's bring your project\nto life.",
+    "subheading": "Tell us your idea and we'll build a solution together.",
+    "name_label": "Your Name",
+    "name_placeholder": "John Doe",
+    "email_label": "Email",
+    "email_placeholder": "you@company.com",
+    "message_label": "Message",
+    "message_placeholder": "Tell us briefly about your project...",
+    "submit": "Send Message",
+    "success": "Message received! We'll get back to you shortly.",
+    "or": "or reach us directly",
+    "email_direct": "hello@vosi.ai"
+  },
+  "footer": {
+    "tagline": "Intelligent software, real results.",
+    "copyright": "© 2025 Vosi. All rights reserved."
+  }
+}
