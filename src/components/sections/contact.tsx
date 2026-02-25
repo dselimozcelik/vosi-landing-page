@@ -39,7 +39,7 @@ export default function Contact() {
             <p className="text-xs font-medium tracking-widest uppercase text-[var(--plum-400)] mb-3">
               {t("label")}
             </p>
-            <h2 className="text-3xl sm:text-4xl font-bold text-[var(--foreground)] tracking-tight leading-tight mb-4">
+            <h2 className="text-3xl sm:text-4xl font-bold text-[var(--foreground)] tracking-tight leading-tight mb-4" style={{ fontFamily: "var(--font-syne)" }}>
               {headingLines.map((line, i) => (
                 <span key={i} className="block">{line}</span>
               ))}

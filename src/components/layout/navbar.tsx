@@ -6,7 +6,6 @@ import { AnimatePresence, motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { Link, usePathname } from "@/i18n/navigation";
 import VosiLogo from "@/components/vosi-logo";
-import { Button } from "@/components/ui/button";
 import { NAV_LINKS } from "@/lib/constants";
 import { cn } from "@/lib/utils";
 
@@ -18,7 +17,7 @@ export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
-    const handler = () => setScrolled(window.scrollY > 20);
+    const handler = () => setScrolled(window.scrollY > 32);
     window.addEventListener("scroll", handler, { passive: true });
     return () => window.removeEventListener("scroll", handler);
   }, []);
@@ -28,57 +27,61 @@ export default function Navbar() {
   return (
     <header
       className={cn(
-        "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
+        "fixed top-0 left-0 right-0 z-50 transition-all duration-500",
         scrolled
-          ? "bg-[var(--background)]/80 backdrop-blur-md border-b border-[var(--border)]"
+          ? "bg-[var(--background)]/85 backdrop-blur-xl border-b border-[var(--border)]"
           : "bg-transparent"
       )}
     >
-      <nav className="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
-        {/* Logo */}
+      <nav className="max-w-6xl mx-auto px-4 sm:px-6 h-[68px] flex items-center justify-between">
         <Link href="/" aria-label="Vosi home">
           <VosiLogo />
         </Link>
 
         {/* Desktop nav */}
-        <div className="hidden md:flex items-center gap-8">
+        <div className="hidden md:flex items-center gap-7">
           {NAV_LINKS.map((link) => (
             <a
               key={link.key}
               href={link.href}
-              className="text-sm text-[var(--foreground-muted)] hover:text-[var(--foreground)] transition-colors"
+              className="text-[13px] font-medium tracking-wide text-[var(--foreground-muted)] hover:text-[var(--foreground)] transition-colors duration-200"
+              style={{ fontFamily: "var(--font-syne)" }}
             >
               {t(link.key)}
             </a>
           ))}
         </div>
 
-        {/* Desktop right actions */}
+        {/* Desktop right */}
         <div className="hidden md:flex items-center gap-3">
-          {/* Language switcher */}
           <Link
             href={pathname}
             locale={otherLocale}
-            className="text-xs font-medium text-[var(--foreground-muted)] hover:text-[var(--foreground)] transition-colors px-2 py-1 rounded border border-[var(--border)] hover:border-[var(--plum-500)]"
+            className="text-[11px] font-medium tracking-[0.15em] text-[var(--foreground-muted)] hover:text-[var(--foreground)] transition-colors px-2.5 py-1.5 border border-[var(--border)] hover:border-[var(--plum-600)] rounded-sm"
+            style={{ fontFamily: "var(--font-syne)" }}
           >
             {otherLocale.toUpperCase()}
           </Link>
-          <Button
-            asChild
-            size="sm"
-            className="bg-[var(--plum-600)] hover:bg-[var(--plum-500)] text-white border-0"
+          <a
+            href="#contact"
+            className="text-[13px] font-medium text-white px-4 py-2 rounded-sm transition-all duration-200 hover:opacity-90"
+            style={{
+              fontFamily: "var(--font-syne)",
+              background: "linear-gradient(135deg, var(--plum-600) 0%, var(--plum-500) 100%)",
+              boxShadow: "0 0 0 1px var(--plum-700)",
+            }}
           >
-            <a href="#contact">{t("cta")}</a>
-          </Button>
+            {t("cta")}
+          </a>
         </div>
 
         {/* Mobile menu button */}
         <button
-          className="md:hidden text-[var(--foreground-muted)] hover:text-[var(--foreground)] p-1"
+          className="md:hidden text-[var(--foreground-muted)] hover:text-[var(--foreground)] p-1 transition-colors"
           onClick={() => setMenuOpen((v) => !v)}
           aria-label="Toggle menu"
         >
-          {menuOpen ? <X size={22} /> : <Menu size={22} />}
+          {menuOpen ? <X size={20} /> : <Menu size={20} />}
         </button>
       </nav>
 
@@ -86,41 +89,45 @@ export default function Navbar() {
       <AnimatePresence>
         {menuOpen && (
           <motion.div
-            initial={{ opacity: 0, y: -8 }}
+            initial={{ opacity: 0, y: -6 }}
             animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -8 }}
-            transition={{ duration: 0.18 }}
-            className="md:hidden bg-[var(--background)]/95 backdrop-blur-md border-b border-[var(--border)] px-4 pb-4"
+            exit={{ opacity: 0, y: -6 }}
+            transition={{ duration: 0.16 }}
+            className="md:hidden bg-[var(--background)]/98 backdrop-blur-xl border-b border-[var(--border)] px-4 pb-5"
           >
-            <div className="flex flex-col gap-4 pt-2">
+            <div className="flex flex-col pt-1">
               {NAV_LINKS.map((link) => (
                 <a
                   key={link.key}
                   href={link.href}
                   onClick={() => setMenuOpen(false)}
-                  className="text-sm text-[var(--foreground-muted)] hover:text-[var(--foreground)] transition-colors py-1"
+                  className="text-sm font-medium text-[var(--foreground-muted)] hover:text-[var(--foreground)] transition-colors py-3 border-b border-[var(--border)]"
+                  style={{ fontFamily: "var(--font-syne)" }}
                 >
                   {t(link.key)}
                 </a>
               ))}
-              <div className="flex items-center gap-3 pt-2 border-t border-[var(--border)]">
+              <div className="flex items-center gap-3 pt-4">
                 <Link
                   href={pathname}
                   locale={otherLocale}
-                  className="text-xs font-medium text-[var(--foreground-muted)] hover:text-[var(--foreground)] transition-colors px-2 py-1 rounded border border-[var(--border)]"
+                  className="text-[11px] font-medium tracking-widest text-[var(--foreground-muted)] px-2.5 py-1.5 border border-[var(--border)] rounded-sm"
+                  style={{ fontFamily: "var(--font-syne)" }}
                   onClick={() => setMenuOpen(false)}
                 >
                   {otherLocale.toUpperCase()}
                 </Link>
-                <Button
-                  asChild
-                  size="sm"
-                  className="bg-[var(--plum-600)] hover:bg-[var(--plum-500)] text-white border-0"
+                <a
+                  href="#contact"
+                  onClick={() => setMenuOpen(false)}
+                  className="text-sm font-medium text-white px-4 py-2 rounded-sm"
+                  style={{
+                    fontFamily: "var(--font-syne)",
+                    background: "linear-gradient(135deg, var(--plum-600) 0%, var(--plum-500) 100%)",
+                  }}
                 >
-                  <a href="#contact" onClick={() => setMenuOpen(false)}>
-                    {t("cta")}
-                  </a>
-                </Button>
+                  {t("cta")}
+                </a>
               </div>
             </div>
           </motion.div>
